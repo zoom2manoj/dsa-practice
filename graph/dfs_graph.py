@@ -8,18 +8,19 @@ class Graph:
 
     def addEdge(self, v, e):
         self.graph[v].append(e)
-    def bfs(self, v):
 
-        visited = [v]
-        q = [v]
+    def dfsutil(self, v, visited):
+        print(v)
+        visited.append(v)
+        for x in self.graph[v]:
+            if x not in visited:
+                self.dfsutil(x, visited)
 
-        while q:
-            item = q.pop(0)
-            print(item)
-            for x in self.graph[item]:
-                if x not in visited:
-                    visited.append(x)
-                    q.append(x)
+    def dfs(self, v):
+
+        visited = []
+        self.dfsutil(v, visited)
+
 
 if __name__ == '__main__':
     # Create a graph given in
@@ -33,5 +34,5 @@ if __name__ == '__main__':
     g.addEdge(3, 3)
     print("Following is Breadth First Traversal"
           " (starting from vertex 2)")
-    g.bfs(2)
+    g.dfs(2)
     # output 2 0 3 1
