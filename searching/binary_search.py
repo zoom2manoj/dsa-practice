@@ -1,7 +1,7 @@
 
 
 list  = [11, 12, 22, 25, 34, 64, 90]
-target = 11111
+target = 12
 counter = 0;
 
 def binary_search(data, target):
