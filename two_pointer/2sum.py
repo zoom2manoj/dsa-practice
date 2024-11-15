@@ -1,15 +1,15 @@
 def two_pointer_tech(arr, target):
     left = 0
-    right = len(arr)-1
+    right = len(arr) - 1
     arr.sort()
-    while left<right:
+    while left < right:
 
-        if target-arr[left]==arr[right]:
+        if target - arr[left] == arr[right]:
             return True
-        elif target-arr[left]<arr[right]:
-            right-=1
+        elif target - arr[left] < arr[right]:
+            right -= 1
         else:
-            left+=1
+            left += 1
     return False
 
 
